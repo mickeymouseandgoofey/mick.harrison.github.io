@@ -31,49 +31,117 @@
   </section>
 
   <section class="bio">
-  <h2>About Me</h2>
+    <h2>About Me</h2>
 
-  <p>I live for freedom, style, and the thrill of standing out.</p>
-  <p>This page is a tribute to bold energy and fierce vibes.</p>
+    <p>I live for freedom, style, and the thrill of standing out.</p>
+    <p>This page is a tribute to bold energy and fierce vibes.</p>
 
-  <br>
+    <br>
 
-  <p>Legend has it, he was born under a disco ball during a thunderstorm.</p>
-  <p>Equal parts chaos and charisma.</p>
-  <p>Known to some as a visionary, to others as simply as “Florida Man.”</p>
-  <p>He's spent his life dodging norms, responsibilities, and dress codes.</p>
+    <p>Legend has it, he was born under a disco ball during a thunderstorm.</p>
+    <p>Equal parts chaos and charisma.</p>
+    <p>Known to some as a visionary, to others simply as “Florida Man.”</p>
+    <p>He's spent his life dodging norms, responsibilities, and dress codes.</p>
 
-  <br>
+    <br>
 
-  <p>Hobbies include:</p>
-  <ul>
-    <li>Posing near wind machines</li>
-    <li>Misquoting philosophers</li>
-    <li>Curating playlists that could start revolutions</li>
-  </ul>
+    <p>Hobbies include:</p>
+    <ul>
+      <li>Posing near wind machines</li>
+      <li>Misquoting philosophers</li>
+      <li>Curating playlists that could start revolutions</li>
+    </ul>
 
-  <br>
+    <br>
 
-  <p>He didn’t choose the spotlight—it chooses him.</p>
-  <p>Mostly because he refused to leave.</p>
-  <p>This site is a shrine to their aesthetic: bold, bizarre, and just self-aware enough to be dangerous.</p>
-  <p>If you’re here for subtlety, you’ve taken a wrong turn.</p>
-  <p>If you crave flair, freedom, and the occasional eagle fly-by—welcome home.</p>
-</section>
-
-
+    <p>He didn’t choose the spotlight—it chooses him.</p>
+    <p>Mostly because he refused to leave.</p>
+    <p>This site is a shrine to his aesthetic: bold, bizarre, and just self-aware enough to be dangerous.</p>
+    <p>If you’re here for subtlety, you’ve taken a wrong turn.</p>
+    <p>If you crave flair, freedom, and the occasional eagle fly-by—welcome home.</p>
+  </section>
 
   <footer>
     <p>Built with grit and HTML. © 2025</p>
   </footer>
 
-  <div class="fireworks">
-  <div class="burst"></div>
-  <div class="burst delay"></div>
-  <div class="burst offset"></div>
-</div>
+  <!-- Fireworks Canvas -->
+  <canvas id="fireworksCanvas"></canvas>
 
+  <!-- Fireworks Script -->
+  <script>
+    const canvas = document.getElementById('fireworksCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  
+    class Particle {
+      constructor(x, y, angle, speed, color) {
+        this.x = x;
+        this.y = y;
+        this.angle = angle;
+        this.speed = speed;
+        this.color = color;
+        this.alpha = 1;
+        this.radius = Math.random() * 3 + 1;
+      }
+
+      update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        this.alpha -= 0.02;
+      }
+
+      draw(ctx) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(${this.color},${this.alpha})`;
+        ctx.fill();
+      }
+    }
+
+    class Firework {
+      constructor(x, y) {
+        this.particles = [];
+        const colors = ['255,0,79', '255,153,0', '0,255,255', '255,255,0'];
+        for (let i = 0; i < 50; i++) {
+          const angle = Math.random() * 2 * Math.PI;
+          const speed = Math.random() * 5 + 2;
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          this.particles.push(new Particle(x, y, angle, speed, color));
+        }
+      }
+
+      update() {
+        this.particles.forEach(p => p.update());
+        this.particles = this.particles.filter(p => p.alpha > 0);
+      }
+
+      draw(ctx) {
+        this.particles.forEach(p => p.draw(ctx));
+      }
+    }
+
+    let fireworks = [];
+
+    function launchFirework() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height / 2;
+      fireworks.push(new Firework(x, y));
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      fireworks.forEach(fw => {
+        fw.update();
+        fw.draw(ctx);
+      });
+      fireworks = fireworks.filter(fw => fw.particles.length > 0);
+      requestAnimationFrame(animate);
+    }
+
+    setInterval(launchFirework, 800);
+    animate();
+  </script>
 </body>
 </html>
