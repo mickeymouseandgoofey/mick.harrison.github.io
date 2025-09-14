@@ -65,33 +65,18 @@ header p {
     transform: rotate(-15deg) scale(1);
   }
   60% {
-    top: 70%;
-    left: 66%;
+    top: 460px;
+    left: 820px;
     transform: rotate(10deg) scale(1.2);
   }
   80% {
-    top: 72%;
-    left: 68%;
+    top: 480px;
+    left: 850px;
     transform: rotate(0deg) scale(0.95);
   }
   100% {
-    top: 72%;
-    left: 68%;
+    top: 470px;
+    left: 860px;
     transform: rotate(0deg) scale(1);
   }
-}
-
-/* === Bio Section === */
-.bio {
-  background-color: #222;
-  padding: 40px 20px;
-  border-top: 2px solid #fff;
-}
-
-/* === Footer === */
-footer {
-  background-color: #000;
-  padding: 20px;
-  font-size: 0.8em;
-  color: #aaa;
 }
