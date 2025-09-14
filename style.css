@@ -14,18 +14,18 @@
     transform: rotate(-15deg) scale(1);
   }
   60% {
-    top: 80%;
-    left: 80%;
+    top: 75%;
+    left: 70%;
     transform: rotate(10deg) scale(1.2);
   }
   80% {
-    top: 85%;
-    left: 85%;
+    top: 82%;
+    left: 76%;
     transform: rotate(0deg) scale(0.95);
   }
   100% {
-    top: 85%;
-    left: 85%;
+    top: 82%;
+    left: 76%;
     transform: rotate(0deg) scale(1);
   }
 }
