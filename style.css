@@ -1,3 +1,4 @@
+/* === Base Styles === */
 body {
   background-color: #000;
   color: #fff;
@@ -5,6 +6,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 header {
@@ -22,8 +24,9 @@ header p {
   font-size: 1.5em;
 }
 
+/* === Gallery Section === */
 .gallery {
-  position: relative; /* Needed for eagle to land inside */
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -45,42 +48,50 @@ header p {
   box-shadow: 0 0 40px red;
 }
 
-.bio {
-  background-color: #222;
-  padding: 40px 20px;
-  border-top: 2px solid #fff;
-}
-
-footer {
-  background-color: #000;
-  padding: 20px;
-  font-size: 0.8em;
-  color: #aaa;
-}
-
+/* === Flying Eagle Animation === */
 .fly-eagle {
   position: absolute;
   top: -200px;
   left: -300px;
   width: 200px;
   z-index: 10;
-  animation: diagonal-land 4s ease-out forwards;
+  animation: eagle-bounce-in 4s ease-out forwards;
 }
 
-@keyframes diagonal-land {
+@keyframes eagle-bounce-in {
   0% {
     top: -200px;
     left: -300px;
-    transform: rotate(-15deg);
+    transform: rotate(-15deg) scale(1);
+  }
+  60% {
+    top: 80%;
+    left: 80%;
+    transform: rotate(10deg) scale(1.2);
   }
   80% {
-    top: 100px;
-    left: 50vw;
-    transform: rotate(10deg);
+    top: 85%;
+    left: 85%;
+    transform: rotate(0deg) scale(0.95);
   }
   100% {
-    top: 140px;
-    left: 60vw;
-    transform: rotate(0deg);
+    top: 85%;
+    left: 85%;
+    transform: rotate(0deg) scale(1);
   }
+}
+
+/* === Bio Section === */
+.bio {
+  background-color: #222;
+  padding: 40px 20px;
+  border-top: 2px solid #fff;
+}
+
+/* === Footer === */
+footer {
+  background-color: #000;
+  padding: 20px;
+  font-size: 0.8em;
+  color: #aaa;
 }
