@@ -1,7 +1,7 @@
 .fly-eagle {
   position: absolute;
-  top: -200px;
-  left: -300px;
+  top: 72%;
+  left: 68%;
   width: 200px;
   z-index: 10;
   animation: eagle-bounce-in 4s ease-out forwards;
@@ -14,18 +14,18 @@
     transform: rotate(-15deg) scale(1);
   }
   60% {
-    top: 75%;
-    left: 70%;
+    top: 70%;
+    left: 66%;
     transform: rotate(10deg) scale(1.2);
   }
   80% {
-    top: 82%;
-    left: 76%;
+    top: 72%;
+    left: 68%;
     transform: rotate(0deg) scale(0.95);
   }
   100% {
-    top: 82%;
-    left: 76%;
+    top: 72%;
+    left: 68%;
     transform: rotate(0deg) scale(1);
   }
 }
