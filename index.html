@@ -140,7 +140,13 @@
       requestAnimationFrame(animate);
     }
 
-    setInterval(launchFirework, 300);
+    #setInterval(launchFirework, 300);
+    setInterval(() => {
+  launchFirework();
+  launchFirework();
+  launchFirework();
+}, 500);
+
     animate();
   </script>
 </body>
