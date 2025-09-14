@@ -59,15 +59,28 @@ footer {
 
 .fly-eagle {
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: -300px;
   width: 200px;
   z-index: 10;
-  animation: soar 15s linear infinite;
+  animation: fly-in 4s ease-out forwards;
 }
 
-@keyframes soar {
-  0% { left: -300px; }
-  100% { left: 100vw; }
+@keyframes fly-in {
+  0% {
+    left: -300px;
+    top: 100px;
+    transform: rotate(-10deg);
+  }
+  80% {
+    left: 50vw;
+    top: 120px;
+    transform: rotate(5deg);
+  }
+  100% {
+    left: 60vw;
+    top: 140px;
+    transform: rotate(0deg);
+  }
 }
 
