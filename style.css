@@ -14,18 +14,18 @@
     transform: rotate(-15deg) scale(1);
   }
   60% {
-    top: 460px;
-    left: 780px;
+    top: 500px;
+    left: 900px;
     transform: rotate(10deg) scale(1.2);
   }
   80% {
-    top: 500px;
-    left: 820px;
+    top: 540px;
+    left: 940px;
     transform: rotate(0deg) scale(0.95);
   }
   100% {
-    top: 500px;
-    left: 820px;
+    top: 540px;
+    left: 940px;
     transform: rotate(0deg) scale(1);
   }
 }
