@@ -77,8 +77,8 @@ header p {
     transform: rotate(0deg) scale(0.95);
   }
   100% {
-    top: 650px;
-    left: 1100px;
+    top: 625px;
+    left: 1200px;
     transform: rotate(0deg) scale(1);
   }
 }
