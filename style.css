@@ -23,6 +23,7 @@ header p {
 }
 
 .gallery {
+  position: relative; /* Needed for eagle to land inside */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -59,28 +60,27 @@ footer {
 
 .fly-eagle {
   position: absolute;
-  top: 100px;
+  top: -200px;
   left: -300px;
   width: 200px;
   z-index: 10;
-  animation: fly-in 4s ease-out forwards;
+  animation: diagonal-land 4s ease-out forwards;
 }
 
-@keyframes fly-in {
+@keyframes diagonal-land {
   0% {
+    top: -200px;
     left: -300px;
-    top: 100px;
-    transform: rotate(-10deg);
+    transform: rotate(-15deg);
   }
   80% {
+    top: 100px;
     left: 50vw;
-    top: 120px;
-    transform: rotate(5deg);
+    transform: rotate(10deg);
   }
   100% {
-    left: 60vw;
     top: 140px;
+    left: 60vw;
     transform: rotate(0deg);
   }
 }
-
