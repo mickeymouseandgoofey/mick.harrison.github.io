@@ -1,0 +1,11 @@
+.bikini-gallery {
+  background-color: #222;
+  padding: 30px;
+}
+
+.bikini-gallery img {
+  width: 250px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px hotpink;
+}
