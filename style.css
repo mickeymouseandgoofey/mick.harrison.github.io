@@ -82,3 +82,35 @@ header p {
     transform: rotate(0deg) scale(1);
   }
 }
+
+/* === Bio Section === */
+.bio {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  text-align: left;
+  border-top: 2px solid #fff;
+  box-shadow: 0 0 20px #ff004f;
+  line-height: 1.6;
+}
+
+.bio h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff9900;
+}
+
+.bio ul {
+  list-style-position: inside;
+  text-align: center;
+  padding-left: 0;
+  margin: 10px auto;
+}
+
+.bio li {
+  margin-bottom: 8px;
+}
+
