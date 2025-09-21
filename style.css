@@ -24,16 +24,6 @@ header p {
   font-size: 1.5em;
 }
 
-header {
-  position: relative;
-}
-
-#music-player {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
-}
 
 
 
