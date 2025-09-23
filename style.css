@@ -80,7 +80,7 @@ header p {
     transform: translateX(-50%) rotate(0deg) scale(0.95);
   }
   100% {
-    top: 550px;
+    top: 525px;
     left: 50%;
     transform: translateX(-50%) rotate(0deg) scale(1);
   }
@@ -90,7 +90,7 @@ header p {
 /* === Bio Section === */
 .bio {
   max-width: 600px;
-  margin: 150px auto 40px; /* Top margin increased to push it down */
+  margin: 175px auto 40px; /* Top margin increased to push it down */
   padding: 20px;
   background-color: #222;
   color: #fff;
