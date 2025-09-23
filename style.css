@@ -90,7 +90,7 @@ header p {
 /* === Bio Section === */
 .bio {
   max-width: 600px;
-  margin: 120px auto 40px; /* Top margin increased to push it down */
+  margin: 150px auto 40px; /* Top margin increased to push it down */
   padding: 20px;
   background-color: #222;
   color: #fff;
