@@ -125,4 +125,35 @@
 
       update() {
         this.particles.forEach(p => p.update());
-        this
+        this.particles = this.particles.filter(p => p.alpha > 0);
+      }
+
+      draw(ctx) {
+        this.particles.forEach(p => p.draw(ctx));
+      }
+    }
+
+    let fireworks = [];
+
+    function launchFirework() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * 100 + 50;
+      fireworks.push(new Firework(x, y));
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      fireworks.forEach(fw => {
+        fw.update();
+        fw.draw(ctx);
+      });
+      fireworks = fireworks.filter(fw => fw.particles.length > 0);
+      requestAnimationFrame(animate);
+    }
+
+    setInterval(launchFirework, 500);
+
+    animate();
+  </script>
+</body>
+</html>
