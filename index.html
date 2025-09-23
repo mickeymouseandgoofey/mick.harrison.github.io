@@ -1,170 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta charset="UTF-8">
-  <title>Freedom & Flair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Site Title</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
   <header>
-
-  <audio id="music-player" controls autoplay>
-    <source src="assets/music/rock-and-roll-287434.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-    
-    <h1>Welcome to the Show</h1>
-    <p>Bold. Beautiful. Unapologetic.</p>
+    <h1>Welcome to My Site</h1>
+    <p>Featuring Models 1–6 and a Majestic Eagle</p>
   </header>
 
-  <section class="gallery">
-    <!-- Animated eagle flies in and lands here -->
-    <img src="flyingeagle.jpg" class="fly-eagle" alt="Flying eagle">
+  <div class="gallery">
+    <!-- Replace with your actual model images -->
+    <img src="model1.jpg" alt="Model 1">
+    <img src="model2.jpg" alt="Model 2">
+    <img src="model3.jpg" alt="Model 3">
+    <img src="model4.jpg" alt="Model 4">
+    <img src="model5.jpg" alt="Model 5">
+    <img src="model6.jpg" alt="Model 6">
+  </div>
 
-    <!-- Bikini models -->
-    <img src="eagle1.jpg" alt="Model 1">
-    <img src="eagle2.jpg" alt="Model 2">
-    <img src="eagle3.jpg" alt="Model 3">
-    <img src="eagle4.jpg" alt="Model 4">
-    <img src="eagle7.jpg" alt="Model 7">
-    <img src="eagle5.jpg" alt="Model 5">
-    <img src="eagle6.jpg" alt="Model 6">
-  </section>
+  <div class="eagle-wrapper">
+    <img src="eagle.png" class="fly-eagle" alt="Flying Eagle">
+  </div>
 
-  <section class="bio">
-   
-    <p>Legend has it, he was born under a disco ball during a thunderstorm.</p>
-    <p>Equal parts chaos and charisma.</p>
-    <p>Known to some as a visionary, to others simply as “Florida Man.”</p>
-    <p>He's spent his life dodging norms, responsibilities, and dress codes.</p>
-
-    <br>
-
-    <p>Hobbies include:</p>
-    <ul>
-      <li>Posing near wind machines</li>
-      <li>Misquoting philosophers</li>
-      <li>Curating playlists that could start revolutions</li>
-    </ul>
-
-    <br>
-
-    <p>He didn’t choose the spotlight—it chooses him.</p>
-    <p>Mostly because he refused to leave.</p>
-    <p>This site is a shrine to his aesthetic: bold, bizarre, and just self-aware enough to be dangerous.</p>
-    <p>If you’re here for subtlety, you’ve taken a wrong turn.</p>
-    <p>If you crave flair, freedom, and the occasional eagle fly-by—welcome home.</p>
-
-    <br>
-    
+  <div class="bio">
     <h2>About Me</h2>
-
-    <p>I live for freedom, style, and the thrill of standing out.</p>
-    <p>This page is a tribute to bold energy and fierce vibes.</p>
-    <p>It was built with HTML, CSS, and a little JavaScript sprinkled in for flair.</p>
-    <p>If you came here looking for a repository, here you go:</p> 
-    </p>https://github.com/mickeymouseandgoofey/password_manager</p>
-    <p>It's a little password manager I started making for a class project.  I'll upload the flask app (TicTacToe game) I built for my daughter at some point...  For now, I just needed this outrageousely spoofy web page for a [possible] promotion. </p>
-
-        
-  </section>
-
-  <footer>
-    <p>Built with Grit, Satire, and HTML. © 2025</p>
-
-    <p style="font-size: 0.9em; color: #666;">
-  Photos provided and licensed by <strong></strong> 
-  <a href="https://stock.adobe.com" target="_blank" rel="noopener noreferrer">Adobe Stock</a>
-   </p>   Music by <a href="https://pixabay.com/users/audiogreen-39036832/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=287434">Audiogreen</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=287434">Pixabay</a>
-</p>
-
-  </footer>
-
-
-  
-  <!-- Fireworks Canvas -->
-  <canvas id="fireworksCanvas"></canvas>
-
-  <!-- Fireworks Script -->
-  <script>
-    const canvas = document.getElementById('fireworksCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    class Particle {
-      constructor(x, y, angle, speed, color) {
-        this.x = x;
-        this.y = y;
-        this.angle = angle;
-        this.speed = speed;
-        this.color = color;
-        this.alpha = 1;
-        this.radius = Math.random() * 3 + 1;
-      }
-
-      update() {
-        this.x += Math.cos(this.angle) * this.speed;
-        this.y += Math.sin(this.angle) * this.speed;
-        this.alpha -= 0.02;
-      }
-
-      draw(ctx) {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = `rgba(${this.color},${this.alpha})`;
-        ctx.fill();
-      }
-    }
-
-    class Firework {
-      constructor(x, y) {
-        this.particles = [];
-        const colors = ['255,0,79', '255,153,0', '0,255,255', '255,255,0'];
-        for (let i = 0; i < 50; i++) {
-          const angle = Math.random() * 2 * Math.PI;
-          const speed = Math.random() * 5 + 2;
-          const color = colors[Math.floor(Math.random() * colors.length)];
-          this.particles.push(new Particle(x, y, angle, speed, color));
-        }
-      }
-
-      update() {
-        this.particles.forEach(p => p.update());
-        this.particles = this.particles.filter(p => p.alpha > 0);
-      }
-
-      draw(ctx) {
-        this.particles.forEach(p => p.draw(ctx));
-      }
-    }
-
-    let fireworks = [];
-
-    function launchFirework() {
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * 100 + 50;
-      fireworks.push(new Firework(x, y));
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      fireworks.forEach(fw => {
-        fw.update();
-        fw.draw(ctx);
-      });
-      fireworks = fireworks.filter(fw => fw.particles.length > 0);
-      requestAnimationFrame(animate);
-    }
-
-    setInterval(launchFirework, 500);
-
-    animate();
-  </script>
-</body>
-</html>
+    <ul>
+      <li>Creative thinker</li>
+      <li>Web enthusiast</li>
+      <li>Always improving</li>
+    </ul>
+  </div>
