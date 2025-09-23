@@ -59,7 +59,7 @@ header p {
 
 /* === Flying Eagle Animation === */
 .fly-eagle {
-  position: fixed;
+  position: absolute;
   top: -200px;
   left: -300px;
   width: 40vw;
