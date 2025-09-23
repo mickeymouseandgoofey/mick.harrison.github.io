@@ -71,20 +71,21 @@ header p {
   }
   60% {
     top: 460px;
-    left: 820px;
-    transform: rotate(10deg) scale(1.2);
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg) scale(1.2);
   }
   80% {
     top: 480px;
-    left: 850px;
-    transform: rotate(0deg) scale(0.95);
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg) scale(0.95);
   }
   100% {
     top: 600px;
-    left: 1150px;
-    transform: rotate(0deg) scale(1);
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg) scale(1);
   }
 }
+
 
 /* === Bio Section === */
 .bio {
