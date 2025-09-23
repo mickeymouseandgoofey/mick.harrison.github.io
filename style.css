@@ -62,25 +62,37 @@ header p {
 
 /* === Flying Eagle Animation === */
 .fly-eagle {
-  width: 60vw;
-  max-width: 300px;
-  animation: eagle-bounce-in 4s ease-out forwards;
+  position: fixed;
+  top: 50%;
+  left: -200px;
+  width: 150px;
+  animation: eagleFly 12s linear infinite;
+  z-index: 1000;
 }
 
-@keyframes eagle-bounce-in {
+@keyframes eagleFly {
   0% {
-    transform: translate(-300px, -200px) rotate(-15deg) scale(1);
+    transform: translateY(-100px) rotate(10deg);
+    left: -200px;
   }
-  60% {
-    transform: translate(-50%, 60px) rotate(10deg) scale(1.2);
+  25% {
+    transform: translateY(0px) rotate(0deg);
+    left: 25%;
   }
-  80% {
-    transform: translate(-50%, 80px) rotate(0deg) scale(0.95);
+  50% {
+    transform: translateY(100px) rotate(-10deg);
+    left: 50%;
+  }
+  75% {
+    transform: translateY(0px) rotate(0deg);
+    left: 75%;
   }
   100% {
-    transform: translate(-50%, 100px) rotate(0deg) scale(1);
+    transform: translateY(-100px) rotate(10deg);
+    left: 110%;
   }
 }
+
 
 /* === Bio Section === */
 .bio {
