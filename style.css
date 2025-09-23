@@ -24,9 +24,6 @@ header p {
   font-size: 1.5em;
 }
 
-
-
-
 /* === Gallery Section === */
 .gallery {
   position: relative;
@@ -38,11 +35,12 @@ header p {
 }
 
 .gallery img {
-  width: 300px;
+  width: 90%;
+  max-width: 300px;
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  margin: 15px;
+  margin: 15px auto;
   border: 5px solid #fff;
   box-shadow: 0 0 25px hotpink;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -53,44 +51,41 @@ header p {
   box-shadow: 0 0 40px red;
 }
 
+/* === Eagle Wrapper === */
+.eagle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 40px 0;
+}
+
 /* === Flying Eagle Animation === */
 .fly-eagle {
-  position: absolute;
-  top: -200px;
-  left: -300px;
-  width: 200px;
-  z-index: 10;
+  width: 40vw;
+  max-width: 200px;
   animation: eagle-bounce-in 4s ease-out forwards;
 }
 
 @keyframes eagle-bounce-in {
   0% {
-    top: -200px;
-    left: -300px;
-    transform: rotate(-15deg) scale(1);
+    transform: translate(-300px, -200px) rotate(-15deg) scale(1);
   }
   60% {
-    top: 460px;
-    left: 50%;
-    transform: translateX(-50%) rotate(10deg) scale(1.2);
+    transform: translate(-50%, 60px) rotate(10deg) scale(1.2);
   }
   80% {
-    top: 480px;
-    left: 50%;
-    transform: translateX(-50%) rotate(0deg) scale(0.95);
+    transform: translate(-50%, 80px) rotate(0deg) scale(0.95);
   }
   100% {
-    top: 525px;
-    left: 50%;
-    transform: translateX(-50%) rotate(0deg) scale(1);
+    transform: translate(-50%, 100px) rotate(0deg) scale(1);
   }
 }
-
 
 /* === Bio Section === */
 .bio {
   max-width: 600px;
-  margin: 175px auto 40px; /* Top margin increased to push it down */
+  margin: 120px auto 40px;
   padding: 20px;
   background-color: #222;
   color: #fff;
@@ -99,7 +94,6 @@ header p {
   box-shadow: 0 0 20px #ff004f;
   line-height: 1.6;
 }
-
 
 .bio h2 {
   font-size: 2em;
@@ -126,4 +120,20 @@ header p {
   left: 0;
   z-index: 0;
   pointer-events: none;
+}
+
+/* === Mobile Tweaks === */
+@media (max-width: 600px) {
+  .fly-eagle {
+    width: 50vw;
+    animation: none;
+  }
+
+  .bio {
+    margin-top: 60px;
+  }
+
+  .gallery img {
+    margin: 10px auto;
+  }
 }
