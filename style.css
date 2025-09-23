@@ -65,7 +65,7 @@ header p {
   position: fixed;
   top: 50%;
   left: -200px;
-  width: 150px;
+  width: 10vw; /* 10% of screen width */
   animation: eagleFly 12s linear infinite;
   z-index: 1000;
 }
