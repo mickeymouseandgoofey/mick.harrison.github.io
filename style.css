@@ -53,18 +53,24 @@ header p {
 
 /* === Eagle Wrapper === */
 .eagle-wrapper {
-  position: fixed;
-  top: 50%;
-  left: -200px;
-  width: 250px;
-  z-index: 1000;
-  pointer-events: none; /* So it doesn't block clicks */
+  position: relative;
+  width: 100%;
+  height: 250px; /* Gives the eagle room to fly */
+  overflow: visible;
+  margin: 40px 0;
 }
 
+
 .fly-eagle {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: -300px;
+  width: 250px;
+  transform: translateY(-50%);
   animation: eagleFly 12s linear infinite;
+  pointer-events: none;
 }
+
 
 
 @keyframes eagleFly {
