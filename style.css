@@ -80,7 +80,7 @@ header p {
     transform: translateX(-50%) rotate(0deg) scale(0.95);
   }
   100% {
-    top: 600px;
+    top: 550px;
     left: 50%;
     transform: translateX(-50%) rotate(0deg) scale(1);
   }
