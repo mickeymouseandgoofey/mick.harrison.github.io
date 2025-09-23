@@ -62,8 +62,8 @@ header p {
 
 /* === Flying Eagle Animation === */
 .fly-eagle {
-  width: 40vw;
-  max-width: 200px;
+  width: 60vw;
+  max-width: 300px;
   animation: eagle-bounce-in 4s ease-out forwards;
 }
 
